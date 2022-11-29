@@ -4,7 +4,7 @@
 
 # Assignment 11: Due Tuesday, November 29, 2022 by 2:30pm
 
-# NAME:
+# NAME: Mya Urena 
 
 ## Instructions
 # For problems that require you to write code, write your code in the appropriate section below
@@ -15,7 +15,6 @@
 
 # As always, document any help you receive from online or friends.
 # You must attempt each problem on your own first though! (Otherwise, you won't learn as well!)
-
 
 # Problem 0
 #
@@ -35,30 +34,49 @@
 # 3) Keep the repo private and use the terminal git commands in the YouTube video for Problem 0a.
 #
 # To make the repo private: On your GitHub repo, go to Settings > Manage Access > Manage (under Public Repository) > Change Visibility. Then add me (jkbye) as a 'collaborator' so I can see it: Settings > Manage Access > Invite a Collaborator (green button) > add 'jkbye'.
+
+
+
+
+
+
 # Problem 1
 #
 # Now let's get to programming
 #
 # a) Import any helpful libraries
-#
+import pandas as pd 
 # b) Load the MA_Public_Schools_2017.csv file as a pandas data frame. Note: these data are from Kaggle: https://www.kaggle.com/ndalziel/massachusetts-public-schools-data and I have already removed a lot of columns.
-#
+A11_data = pd.read_csv('MA_Public_Schools_2017.csv')
+A11_data
 # c) Adapt the example code in the chunk below to replace all spaces in column names with underscores. This is good practice in order to not cause problems with functions that don't allow spaces in variable names (e.g., smf.ols).
-#
+A11_data.columns = A11_data.columns.str.replace(' ', '_')
 # d) Adapt the code from 1c to replace "%" sign with "Perc", because it is also good practice not to start column names with symbols.
-#
+A11_data.columns = A11_data.columns.str.replace('%', 'Perc')
 # e) Find the descriptives for numeric columns.
-#
+A11_data.describe()
 # f) Commit your changes and push to GitHub!
-#
+
 # # Problem 1 code here (can split into multiple code chunks if you want)
-#
-# ​
-#
-# # starter code for 1c -- replace school_data w/ your dataframe name
-#
-school_data.columns = school_data.columns.str.replace(' ', '_') # notice this replaces the 1st argument w/ the 2nd
-#
+import pandas as pd 
+A11_data = pd.read_csv('MA_Public_Schools_2017.csv')
+A11_data
+A11_data.columns = A11_data.columns.str.replace(' ', '_')
+A11_data.columns = A11_data.columns.str.replace('%', 'Perc')
+A11_data.describe()
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Problem 2
 #
 # a) Remove the District Code column.
@@ -70,7 +88,22 @@ school_data.columns = school_data.columns.str.replace(' ', '_') # notice this re
 # d) Commit your changes and push to GitHub!
 #
 # # Problem 2 code here (can split into multiple code chunks if you want)
-#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Problem 3
 #
 # a) Visualize each bivariate relationship among Average_Class_Size, Average_Salary, Perc_Economically_Disadvantaged, and Perc_English_Language_Learner. Use the Seaborn function pairplot. The argument to pairplot should be school_data[['Average_Class_Size', 'Average_Salary', 'Perc_Economically_Disadvantaged', 'Perc_English_Language_Learner']], which will just pull those columns out from the full data frame.
@@ -82,9 +115,16 @@ school_data.columns = school_data.columns.str.replace(' ', '_') # notice this re
 # d) Commit your changes and push to GitHub!
 #
 # # Problem 3 code here (can split into multiple code chunks if you want)
-#
+
+
+
+
+
+
+
+
+
 # Problem 4
-#
 # a) Create a new linear regression model that takes the model from 3c and adds both of the remaining variables from 3a as additional predictor variables. To do this, the formula interface would look like "outcome_name ~ predictor1_name + predictor2_name + predictor3_name"
 #
 # b) Print the summary from 4a, and write a short interpretation of the results, especially comparing it to Problem 3c.
